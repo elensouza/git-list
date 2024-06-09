@@ -1,0 +1,3 @@
+SCHEME = https
+HOST = github.com
+BEGIN_PATH = /api.
