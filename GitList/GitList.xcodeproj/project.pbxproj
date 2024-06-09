@@ -16,6 +16,16 @@
 		03131A7C2C1662D7008562C5 /* GitListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A7B2C1662D7008562C5 /* GitListTests.swift */; };
 		03131A862C1662D7008562C5 /* GitListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A852C1662D7008562C5 /* GitListUITests.swift */; };
 		03131A882C1662D7008562C5 /* GitListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A872C1662D7008562C5 /* GitListUITestsLaunchTests.swift */; };
+		03131A9D2C16676C008562C5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A9C2C16676C008562C5 /* Network.swift */; };
+		03131A9F2C166793008562C5 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A9E2C166793008562C5 /* Configuration.swift */; };
+		03131AA12C1667CE008562C5 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AA02C1667CE008562C5 /* JSONHelper.swift */; };
+		03131AA52C166830008562C5 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 03131AA32C166830008562C5 /* Debug.xcconfig */; };
+		03131AA62C166830008562C5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 03131AA42C166830008562C5 /* Release.xcconfig */; };
+		03131AA92C166959008562C5 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AA82C166959008562C5 /* Spacing.swift */; };
+		03131AAC2C16696E008562C5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AAB2C16696E008562C5 /* Colors.swift */; };
+		03131AAE2C16697C008562C5 /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AAD2C16697C008562C5 /* Radius.swift */; };
+		03131AB02C166988008562C5 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AAF2C166988008562C5 /* Size.swift */; };
+		03131AB22C166996008562C5 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AB12C166996008562C5 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		03131A812C1662D7008562C5 /* GitListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03131A852C1662D7008562C5 /* GitListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitListUITests.swift; sourceTree = "<group>"; };
 		03131A872C1662D7008562C5 /* GitListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		03131A9C2C16676C008562C5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		03131A9E2C166793008562C5 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		03131AA02C1667CE008562C5 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
+		03131AA32C166830008562C5 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		03131AA42C166830008562C5 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		03131AA82C166959008562C5 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		03131AAB2C16696E008562C5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		03131AAD2C16697C008562C5 /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
+		03131AAF2C166988008562C5 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		03131AB12C166996008562C5 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +171,7 @@
 		03131A962C1664E0008562C5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				03131AA72C166936008562C5 /* DesignSystem */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -180,6 +201,8 @@
 		03131A9A2C166513008562C5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				03131A9C2C16676C008562C5 /* Network.swift */,
+				03131A9E2C166793008562C5 /* Configuration.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -187,8 +210,31 @@
 		03131A9B2C166523008562C5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				03131AA22C1667EC008562C5 /* Config */,
+				03131AA02C1667CE008562C5 /* JSONHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		03131AA22C1667EC008562C5 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				03131AA32C166830008562C5 /* Debug.xcconfig */,
+				03131AA42C166830008562C5 /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		03131AA72C166936008562C5 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				03131AA82C166959008562C5 /* Spacing.swift */,
+				03131AAB2C16696E008562C5 /* Colors.swift */,
+				03131AAD2C16697C008562C5 /* Radius.swift */,
+				03131AAF2C166988008562C5 /* Size.swift */,
+				03131AB12C166996008562C5 /* Images.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,9 +341,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03131AA52C166830008562C5 /* Debug.xcconfig in Resources */,
 				03131A712C1662D7008562C5 /* LaunchScreen.storyboard in Resources */,
 				03131A6E2C1662D7008562C5 /* Assets.xcassets in Resources */,
 				03131A6C2C1662D6008562C5 /* Main.storyboard in Resources */,
+				03131AA62C166830008562C5 /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,8 +370,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03131AA92C166959008562C5 /* Spacing.swift in Sources */,
+				03131AAC2C16696E008562C5 /* Colors.swift in Sources */,
+				03131AAE2C16697C008562C5 /* Radius.swift in Sources */,
+				03131AB22C166996008562C5 /* Images.swift in Sources */,
 				03131A692C1662D6008562C5 /* ViewController.swift in Sources */,
+				03131A9F2C166793008562C5 /* Configuration.swift in Sources */,
 				03131A652C1662D6008562C5 /* AppDelegate.swift in Sources */,
+				03131AB02C166988008562C5 /* Size.swift in Sources */,
+				03131AA12C1667CE008562C5 /* JSONHelper.swift in Sources */,
+				03131A9D2C16676C008562C5 /* Network.swift in Sources */,
 				03131A672C1662D6008562C5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
