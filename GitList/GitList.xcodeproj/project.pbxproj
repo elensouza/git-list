@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		03131A652C1662D6008562C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A642C1662D6008562C5 /* AppDelegate.swift */; };
-		03131A672C1662D6008562C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A662C1662D6008562C5 /* SceneDelegate.swift */; };
 		03131A692C1662D6008562C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A682C1662D6008562C5 /* ViewController.swift */; };
 		03131A6C2C1662D6008562C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03131A6A2C1662D6008562C5 /* Main.storyboard */; };
 		03131A6E2C1662D7008562C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03131A6D2C1662D7008562C5 /* Assets.xcassets */; };
@@ -19,8 +18,6 @@
 		03131A9D2C16676C008562C5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A9C2C16676C008562C5 /* Network.swift */; };
 		03131A9F2C166793008562C5 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131A9E2C166793008562C5 /* Configuration.swift */; };
 		03131AA12C1667CE008562C5 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AA02C1667CE008562C5 /* JSONHelper.swift */; };
-		03131AA52C166830008562C5 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 03131AA32C166830008562C5 /* Debug.xcconfig */; };
-		03131AA62C166830008562C5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 03131AA42C166830008562C5 /* Release.xcconfig */; };
 		03131AA92C166959008562C5 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AA82C166959008562C5 /* Spacing.swift */; };
 		03131AAC2C16696E008562C5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AAB2C16696E008562C5 /* Colors.swift */; };
 		03131AAE2C16697C008562C5 /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AAD2C16697C008562C5 /* Radius.swift */; };
@@ -30,6 +27,16 @@
 		03131AB72C1672DD008562C5 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AB62C1672DD008562C5 /* UIViewController+Extensions.swift */; };
 		03131AB92C16731F008562C5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AB82C16731F008562C5 /* UIView+Extensions.swift */; };
 		03131ABB2C16736D008562C5 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131ABA2C16736D008562C5 /* UIImageView+Extensions.swift */; };
+		03131ABD2C168226008562C5 /* GitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131ABC2C168226008562C5 /* GitResponse.swift */; };
+		03131AC02C1682E5008562C5 /* GitListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131ABF2C1682E5008562C5 /* GitListService.swift */; };
+		03131AC22C168491008562C5 /* GitListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AC12C168491008562C5 /* GitListPresenter.swift */; };
+		03131AC42C168645008562C5 /* GitListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AC32C168645008562C5 /* GitListAdapter.swift */; };
+		03131AC62C1686A8008562C5 /* GitCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03131AC52C1686A8008562C5 /* GitCellViewModel.swift */; };
+		03131AC82C16925B008562C5 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 03131AC72C16925B008562C5 /* Debug.xcconfig */; };
+		0342B0D22C16A67F00DB8EDD /* GitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342B0D12C16A67E00DB8EDD /* GitTableViewCell.swift */; };
+		0342B0D42C16A8D600DB8EDD /* GitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342B0D32C16A8D600DB8EDD /* GitListViewController.swift */; };
+		0342B0D82C16AAF900DB8EDD /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342B0D72C16AAF900DB8EDD /* EmptyListView.swift */; };
+		0342B0DA2C16ABE900DB8EDD /* LoadingTableViewReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0342B0D92C16ABE900DB8EDD /* LoadingTableViewReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +59,6 @@
 /* Begin PBXFileReference section */
 		03131A612C1662D6008562C5 /* GitList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03131A642C1662D6008562C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03131A662C1662D6008562C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		03131A682C1662D6008562C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		03131A6B2C1662D6008562C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03131A6D2C1662D7008562C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,8 +72,6 @@
 		03131A9C2C16676C008562C5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		03131A9E2C166793008562C5 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		03131AA02C1667CE008562C5 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
-		03131AA32C166830008562C5 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		03131AA42C166830008562C5 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		03131AA82C166959008562C5 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		03131AAB2C16696E008562C5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		03131AAD2C16697C008562C5 /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
@@ -77,6 +81,17 @@
 		03131AB62C1672DD008562C5 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		03131AB82C16731F008562C5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		03131ABA2C16736D008562C5 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		03131ABC2C168226008562C5 /* GitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitResponse.swift; sourceTree = "<group>"; };
+		03131ABF2C1682E5008562C5 /* GitListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitListService.swift; sourceTree = "<group>"; };
+		03131AC12C168491008562C5 /* GitListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitListPresenter.swift; sourceTree = "<group>"; };
+		03131AC32C168645008562C5 /* GitListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitListAdapter.swift; sourceTree = "<group>"; };
+		03131AC52C1686A8008562C5 /* GitCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCellViewModel.swift; sourceTree = "<group>"; };
+		03131AC72C16925B008562C5 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		03131AC92C169284008562C5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		0342B0D12C16A67E00DB8EDD /* GitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTableViewCell.swift; sourceTree = "<group>"; };
+		0342B0D32C16A8D600DB8EDD /* GitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitListViewController.swift; sourceTree = "<group>"; };
+		0342B0D72C16AAF900DB8EDD /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		0342B0D92C16ABE900DB8EDD /* LoadingTableViewReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +150,6 @@
 				03131A992C166508008562C5 /* Extensions */,
 				03131A9A2C166513008562C5 /* Network */,
 				03131A9B2C166523008562C5 /* Helpers */,
-				03131A662C1662D6008562C5 /* SceneDelegate.swift */,
 				03131A722C1662D7008562C5 /* Info.plist */,
 			);
 			path = GitList;
@@ -187,6 +201,8 @@
 		03131A972C1664F0008562C5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0342B0D52C16AAD600DB8EDD /* Commons */,
+				03131ABE2C1682B2008562C5 /* GitlList */,
 				03131AB32C1671EA008562C5 /* SplashScreenViewController */,
 				03131A682C1662D6008562C5 /* ViewController.swift */,
 			);
@@ -196,6 +212,7 @@
 		03131A982C1664FF008562C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				03131ABC2C168226008562C5 /* GitResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,8 +248,8 @@
 		03131AA22C1667EC008562C5 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				03131AA32C166830008562C5 /* Debug.xcconfig */,
-				03131AA42C166830008562C5 /* Release.xcconfig */,
+				03131AC72C16925B008562C5 /* Debug.xcconfig */,
+				03131AC92C169284008562C5 /* Release.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -255,6 +272,44 @@
 				03131AB42C16720E008562C5 /* SplashScreenViewController.swift */,
 			);
 			path = SplashScreenViewController;
+			sourceTree = "<group>";
+		};
+		03131ABE2C1682B2008562C5 /* GitlList */ = {
+			isa = PBXGroup;
+			children = (
+				0342B0D02C16A64D00DB8EDD /* Views */,
+				03131ABF2C1682E5008562C5 /* GitListService.swift */,
+				03131AC12C168491008562C5 /* GitListPresenter.swift */,
+				03131AC32C168645008562C5 /* GitListAdapter.swift */,
+				0342B0D32C16A8D600DB8EDD /* GitListViewController.swift */,
+			);
+			path = GitlList;
+			sourceTree = "<group>";
+		};
+		0342B0D02C16A64D00DB8EDD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03131AC52C1686A8008562C5 /* GitCellViewModel.swift */,
+				0342B0D12C16A67E00DB8EDD /* GitTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0342B0D52C16AAD600DB8EDD /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				0342B0D62C16AAE100DB8EDD /* Views */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		0342B0D62C16AAE100DB8EDD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0342B0D72C16AAF900DB8EDD /* EmptyListView.swift */,
+				0342B0D92C16ABE900DB8EDD /* LoadingTableViewReusableView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,11 +416,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03131AA52C166830008562C5 /* Debug.xcconfig in Resources */,
 				03131A712C1662D7008562C5 /* LaunchScreen.storyboard in Resources */,
 				03131A6E2C1662D7008562C5 /* Assets.xcassets in Resources */,
 				03131A6C2C1662D6008562C5 /* Main.storyboard in Resources */,
-				03131AA62C166830008562C5 /* Release.xcconfig in Resources */,
+				03131AC82C16925B008562C5 /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,12 +444,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0342B0D22C16A67F00DB8EDD /* GitTableViewCell.swift in Sources */,
 				03131ABB2C16736D008562C5 /* UIImageView+Extensions.swift in Sources */,
+				03131AC62C1686A8008562C5 /* GitCellViewModel.swift in Sources */,
 				03131AB92C16731F008562C5 /* UIView+Extensions.swift in Sources */,
 				03131AA92C166959008562C5 /* Spacing.swift in Sources */,
+				0342B0DA2C16ABE900DB8EDD /* LoadingTableViewReusableView.swift in Sources */,
 				03131AAC2C16696E008562C5 /* Colors.swift in Sources */,
 				03131AB72C1672DD008562C5 /* UIViewController+Extensions.swift in Sources */,
 				03131AB52C16720E008562C5 /* SplashScreenViewController.swift in Sources */,
+				03131AC42C168645008562C5 /* GitListAdapter.swift in Sources */,
 				03131AAE2C16697C008562C5 /* Radius.swift in Sources */,
 				03131AB22C166996008562C5 /* Images.swift in Sources */,
 				03131A692C1662D6008562C5 /* ViewController.swift in Sources */,
@@ -403,8 +461,12 @@
 				03131A652C1662D6008562C5 /* AppDelegate.swift in Sources */,
 				03131AB02C166988008562C5 /* Size.swift in Sources */,
 				03131AA12C1667CE008562C5 /* JSONHelper.swift in Sources */,
+				0342B0D82C16AAF900DB8EDD /* EmptyListView.swift in Sources */,
 				03131A9D2C16676C008562C5 /* Network.swift in Sources */,
-				03131A672C1662D6008562C5 /* SceneDelegate.swift in Sources */,
+				0342B0D42C16A8D600DB8EDD /* GitListViewController.swift in Sources */,
+				03131ABD2C168226008562C5 /* GitResponse.swift in Sources */,
+				03131AC02C1682E5008562C5 /* GitListService.swift in Sources */,
+				03131AC22C168491008562C5 /* GitListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +524,7 @@
 /* Begin XCBuildConfiguration section */
 		03131A892C1662D7008562C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03131AC72C16925B008562C5 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -510,10 +573,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HOST = "$(HOST)";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SCHEME = "$(SCHEME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -522,6 +587,7 @@
 		};
 		03131A8A2C1662D7008562C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03131AC92C169284008562C5 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -564,9 +630,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HOST = "$(HOST)";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SCHEME = "$(SCHEME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -576,12 +644,14 @@
 		};
 		03131A8C2C1662D7008562C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03131AC72C16925B008562C5 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				HOST = "$(HOST)";
 				INFOPLIST_FILE = GitList/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -596,6 +666,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elen.souza.GitList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCHEME = "$(SCHEME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -604,12 +675,14 @@
 		};
 		03131A8D2C1662D7008562C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03131AC92C169284008562C5 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				HOST = "$(HOST)";
 				INFOPLIST_FILE = GitList/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -624,6 +697,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elen.souza.GitList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCHEME = "$(SCHEME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -632,6 +706,7 @@
 		};
 		03131A8F2C1662D7008562C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03131AC72C16925B008562C5 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -651,6 +726,7 @@
 		};
 		03131A902C1662D7008562C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03131AC92C169284008562C5 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -670,6 +746,7 @@
 		};
 		03131A922C1662D7008562C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03131AC72C16925B008562C5 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -687,6 +764,7 @@
 		};
 		03131A932C1662D7008562C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03131AC92C169284008562C5 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

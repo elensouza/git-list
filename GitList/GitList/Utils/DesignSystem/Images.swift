@@ -10,4 +10,5 @@ import UIKit
 enum Images {
     static let githubLogo = UIImage(named: "github-logo")
     static let noImageAvailable = UIImage(named: "no-image-available")
+    static let emptyListIcon = UIImage(named: "empty-list-icon")
 }

@@ -69,6 +69,11 @@ private extension SplashScreenViewController {
     }
 
     func openListController() {
-        //TODO
+        let presenter = GitListPresenter()
+        let controller = GitListViewController(presenter: presenter)
+
+        presenter.controller = controller
+
+        self.navigationController?.setViewControllers([controller], animated: false)
     }
 }
