@@ -1,10 +1,3 @@
-//
-//  GitTableViewCell.swift
-//  GitList
-//
-//  Created by Elen Souza on 10/06/24.
-//
-
 import UIKit
 
 final class GitTableViewCell: UITableViewCell {
@@ -12,8 +5,8 @@ final class GitTableViewCell: UITableViewCell {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFill
-        view.clipsToBounds = true
-        view.layer.cornerRadius = Radius.large
+        view.layer.borderColor = UIColor.secondaryLabel.cgColor
+        view.layer.borderWidth = 1
         return view
     }()
 
@@ -21,7 +14,7 @@ final class GitTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         return label
     }()
 
@@ -29,7 +22,6 @@ final class GitTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.textAlignment = .center
         return label
     }()
 
@@ -64,10 +56,10 @@ final class GitTableViewCell: UITableViewCell {
     private func addsConstraints() {
         NSLayoutConstraint.activate([
             photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Spacing.small),
-            photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Spacing.small),
             photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            photoImageView.widthAnchor.constraint(equalToConstant: 100),
-            photoImageView.heightAnchor.constraint(equalToConstant: 100),
+            photoImageView.widthAnchor.constraint(equalToConstant: Size.largeIcon),
+            photoImageView.heightAnchor.constraint(equalToConstant: Size.largeIcon),
 
             nameLabel.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor,
                                                constant: Spacing.regular),

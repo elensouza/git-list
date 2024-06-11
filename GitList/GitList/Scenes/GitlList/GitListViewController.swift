@@ -22,7 +22,7 @@ final class GitListViewController: UIViewController {
         static let viewEmptyList: String = "viewEmptyList"
         static let barButtonFilter: String = "barButtonFilter"
         static let eightPercent: CGFloat = 0.8
-        static let footerHeight: CGFloat = 123
+        static let footerHeight: CGFloat = 150
     }
 
     private let activity: UIActivityIndicatorView = {
@@ -37,12 +37,13 @@ final class GitListViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(GitTableViewCell.self, forCellReuseIdentifier: "gitCell" )
-        tableView.register(LoadingTableViewReusableView.self, forHeaderFooterViewReuseIdentifier: "footerView")
+        //tableView.register(LoadingTableViewReusableView.self, fo: "footerView")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.refreshControl = refreshControl
         tableView.scrollsToTop = true
         tableView.accessibilityIdentifier = Constants.collectionView
+        tableView.tableFooterView = LoadingTableViewReusableView()
         return tableView
     }()
 
@@ -170,28 +171,37 @@ extension GitListViewController: GitListViewControllerProtocol {
 
 }
 
+//extension GitListViewController: UITableViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView,
+//                        didSelectItemAt indexPath: IndexPath) {
+//        collectionView.deselectItem(at: indexPath, animated: true)
+//
+//        let viewModel = presenter.gits[indexPath.row]
+//        let controller = GitDetailsViewController(viewModel: viewModel)
+//        self.navigationController?.pushViewController(controller, animated: true)
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView,
+//                        willDisplaySupplementaryView view: UICollectionReusableView,
+//                        forElementKind elementKind: String,
+//                        at indexPath: IndexPath) {
+//        guard elementKind == UICollectionView.elementKindSectionFooter, presenter.isRequesting == false else {
+//            return
+//        }
+//
+//        presenter.updatePage()
+//        presenter.getGits()
+//    }
+//}
+
 extension GitListViewController: UITableViewDelegate {
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewModel = presenter.gits[indexPath.row]
-        //let controller = CharacterDetailsViewController(viewModel: viewModel)
-        //self.navigationController?.pushViewController(controller, animated: true)
-    }
-
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplaySupplementaryView view: UICollectionReusableView,
-                        forElementKind elementKind: String,
-                        at indexPath: IndexPath) {
-        guard elementKind == UICollectionView.elementKindSectionFooter, presenter.isRequesting == false else {
-            return
-        }
-
-        presenter.updatePage()
-        presenter.getGits()
+        let controller = GitDetailsViewController(viewModel: viewModel)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
+
 
 extension GitListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -206,13 +216,6 @@ extension GitListViewController: UITableViewDataSource {
         cell.setup(with: item)
 
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard let footerView = tableView.footerView(forSection: 0) as? LoadingTableViewReusableView else {
-            return UIView()
-        }
-        return LoadingTableViewReusableView()
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
