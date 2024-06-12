@@ -11,8 +11,7 @@ protocol GitListViewControllerProtocol: AnyObject {
     func reloadData()
     func showLoading()
     func dismissLoading()
-    func showError()
-    func scrollToTop()
+    func showError(message: String)
 }
 
 final class GitListViewController: UIViewController {
@@ -20,9 +19,9 @@ final class GitListViewController: UIViewController {
         static let activityIndicator: String = "activityIndicator"
         static let collectionView: String = "tableView"
         static let viewEmptyList: String = "viewEmptyList"
-        static let barButtonFilter: String = "barButtonFilter"
-        static let eightPercent: CGFloat = 0.8
-        static let footerHeight: CGFloat = 150
+        static let cellIdentifier: String = "Cell"
+        static let footerIdentifier: String = "Footer"
+        static let footerHeight: CGFloat = 80
     }
 
     private let activity: UIActivityIndicatorView = {
@@ -34,22 +33,20 @@ final class GitListViewController: UIViewController {
     }()
 
     private lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(GitTableViewCell.self, forCellReuseIdentifier: "gitCell" )
-        //tableView.register(LoadingTableViewReusableView.self, fo: "footerView")
+        tableView.register(GitTableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
+        tableView.register(LoadingTableViewReusableView.self, forHeaderFooterViewReuseIdentifier: Constants.footerIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.refreshControl = refreshControl
-        tableView.scrollsToTop = true
         tableView.accessibilityIdentifier = Constants.collectionView
-        tableView.tableFooterView = LoadingTableViewReusableView()
         return tableView
     }()
 
     private let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string:"Carregando Gits")
+        refreshControl.attributedTitle = NSAttributedString(string: LocalizableStrings.loadingGits)
         return refreshControl
     }()
 
@@ -78,7 +75,6 @@ final class GitListViewController: UIViewController {
         setupViews()
         presenter.getGits()
     }
-
 }
 
 private extension GitListViewController {
@@ -116,7 +112,7 @@ private extension GitListViewController {
     }
 
     func configureNavigation() {
-        navigationItem.title = "Gits"
+        navigationItem.title = LocalizableStrings.gits
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
     }
@@ -130,7 +126,6 @@ private extension GitListViewController {
 private extension GitListViewController {
     func refreshRoundListData(_ sender: Any) {
         presenter.updateGits()
-        refreshControl.endRefreshing()
     }
 }
 
@@ -138,6 +133,7 @@ extension GitListViewController: GitListViewControllerProtocol {
     func reloadData() {
         emptyListView.isHidden = presenter.gits.isEmpty == false
         tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 
     func showLoading() {
@@ -149,14 +145,13 @@ extension GitListViewController: GitListViewControllerProtocol {
         activity.stopAnimating()
     }
 
-    func showError() {
-        let dialogMessage = UIAlertController(title: "",
-                                              message: "",
+    func showError(message: String) {
+        let dialogMessage = UIAlertController(title: LocalizableStrings.oops,
+                                              message: message,
                                               preferredStyle: .alert)
 
-        let tryAgainAction = UIAlertAction(title: "",
+        let tryAgainAction = UIAlertAction(title: LocalizableStrings.tryAgain,
                                            style: .default) { [weak self] _ in
-
             self?.presenter.getGits()
         }
 
@@ -165,40 +160,35 @@ extension GitListViewController: GitListViewControllerProtocol {
         self.present(dialogMessage, animated: true, completion: nil)
     }
 
-    func scrollToTop() {
-
-    }
-
 }
-
-//extension GitListViewController: UITableViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView,
-//                        didSelectItemAt indexPath: IndexPath) {
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//
-//        let viewModel = presenter.gits[indexPath.row]
-//        let controller = GitDetailsViewController(viewModel: viewModel)
-//        self.navigationController?.pushViewController(controller, animated: true)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        willDisplaySupplementaryView view: UICollectionReusableView,
-//                        forElementKind elementKind: String,
-//                        at indexPath: IndexPath) {
-//        guard elementKind == UICollectionView.elementKindSectionFooter, presenter.isRequesting == false else {
-//            return
-//        }
-//
-//        presenter.updatePage()
-//        presenter.getGits()
-//    }
-//}
 
 extension GitListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
         let viewModel = presenter.gits[indexPath.row]
         let controller = GitDetailsViewController(viewModel: viewModel)
-        self.navigationController?.pushViewController(controller, animated: true)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView,
+                   willDisplayFooterView view: UIView,
+                   forSection section: Int) {
+        guard tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.footerIdentifier) != nil,
+              presenter.isRequesting == false else {
+            return
+        }
+
+        presenter.updatePage()
+        presenter.getGits()
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        Constants.footerHeight
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
     }
 }
 
@@ -209,7 +199,9 @@ extension GitListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: GitTableViewCell = tableView.dequeueReusableCell(withIdentifier: "gitCell", for: indexPath) as? GitTableViewCell else {
+        guard indexPath.row < presenter.gits.count,
+              let cell: GitTableViewCell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier,
+                                                                         for: indexPath) as? GitTableViewCell else {
             return UITableViewCell()
         }
         let item = presenter.gits[indexPath.row]
@@ -218,21 +210,11 @@ extension GitListViewController: UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        //if presenter.currentPage < presenter.pages {
-        return Constants.footerHeight
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let height = scrollView.frame.size.height
-
-        if offsetY > contentHeight - height {
-            if !presenter.isRequesting {
-                presenter.updatePage()
-                presenter.getGits()
-            }
+    func tableView(_ tableView: UITableView,
+                   viewForFooterInSection section: Int) -> UIView? {
+        guard let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.footerIdentifier) as? LoadingTableViewReusableView else {
+            return nil
         }
+        return footer
     }
 }

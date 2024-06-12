@@ -12,7 +12,7 @@ enum GitListAdapter {
         response.map { result in
             GitCellViewModel(name: result.owner?.login ?? "",
                              photoURL: result.owner?.avatarUrl ?? "",
-                             fileQuantity: "\(result.files.count)")
+                             fileQuantity: String(format: LocalizableStrings.files, "\(result.files.count)"))
         }
     }
 }

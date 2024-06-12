@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  GitList
+
+  Created by Elen Souza on 11/06/24.
+  
+*/
+
+"gits" = "Gits 🐱";
+"user" = "Usuário: %@";
+"loading.gits" = "Carregando gits...";
+"oops" = "Ops";
+"details" = "Detalhes";
+"load.error.message" = "Ocorreu um erro ao buscar as informações";
+"try.again" = "Tentar novamente";
+"no.results" = "Não foram encontrados resultados para sua pesquisa";
+"files" = "Arquivos: %@";

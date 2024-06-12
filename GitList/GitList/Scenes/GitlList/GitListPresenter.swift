@@ -46,11 +46,10 @@ final class GitListPresenter: GitListPresenterProtocol {
             self?.controller?.dismissLoading()
             switch result {
             case .success(let response):
-                //self?.pages = response.info?.pages ?? 0
                 self?.gits.append(contentsOf: GitListAdapter.adaptToGitCellViewModel(response))
                 self?.controller?.reloadData()
-            case .failure:
-                self?.controller?.showError()
+            case .failure(let error):
+                self?.controller?.showError(message: error.localizedDescription)
             }
         }
     }

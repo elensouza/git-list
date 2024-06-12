@@ -23,7 +23,7 @@ final class EmptyListView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
-        label.text = "Nào foram encontrados"
+        label.text = LocalizableStrings.noResults
         return label
     }()
 

@@ -6,6 +6,8 @@ final class GitTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFill
         view.layer.borderColor = UIColor.secondaryLabel.cgColor
+        view.layer.cornerRadius = Size.defaultHeight / 2
+        view.clipsToBounds = true
         view.layer.borderWidth = 1
         return view
     }()
@@ -14,7 +16,7 @@ final class GitTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return label
     }()
 
@@ -22,13 +24,22 @@ final class GitTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return label
+    }()
+
+    private var containerStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        return stackView
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
         addsConstraints()
+        backgroundColor = .clear
     }
 
     required init?(coder: NSCoder) {
@@ -36,38 +47,40 @@ final class GitTableViewCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
-        nameLabel.text = ""
         photoImageView.image = UIImage()
+        nameLabel.text = ""
         filesQuantityLabel.text = ""
     }
 
     func setup(with model: GitCellViewModel) {
         photoImageView.download(from: model.photoURL)
         nameLabel.text = model.name
-        filesQuantityLabel.text = "Quantidade de arquivos: \(model.fileQuantity)"
+        filesQuantityLabel.text =  model.fileQuantity
     }
 
     private func addViews() {
-        contentView.addSubview(nameLabel)
         contentView.addSubview(photoImageView)
-        contentView.addSubview(filesQuantityLabel)
+        containerStackView.addArrangedSubview(nameLabel)
+        containerStackView.addArrangedSubview(filesQuantityLabel)
+        contentView.addSubview(containerStackView)
     }
 
     private func addsConstraints() {
         NSLayoutConstraint.activate([
-            photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Spacing.small),
-            photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Spacing.small),
-            photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            photoImageView.widthAnchor.constraint(equalToConstant: Size.largeIcon),
-            photoImageView.heightAnchor.constraint(equalToConstant: Size.largeIcon),
+            photoImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+                                                    constant: Spacing.small),
+            photoImageView.widthAnchor.constraint(equalToConstant: Size.defaultHeight),
+            photoImageView.heightAnchor.constraint(equalToConstant: Size.defaultHeight),
 
-            nameLabel.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor,
-                                               constant: Spacing.regular),
-            nameLabel.centerYAnchor.constraint(equalTo: photoImageView.centerYAnchor),
-
-            filesQuantityLabel.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor,
-                                               constant: Spacing.regular),
-            filesQuantityLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: Spacing.small)
+            containerStackView.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor,
+                                                        constant: Spacing.regular),
+            containerStackView.topAnchor.constraint(equalTo: contentView.topAnchor,
+                                                    constant: Spacing.small),
+            containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                                         constant: -Spacing.regular),
+            containerStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
+                                                       constant: -Spacing.regular)
         ])
     }
 }
