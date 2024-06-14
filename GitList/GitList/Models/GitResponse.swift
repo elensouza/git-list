@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - GitResponse
-struct GitResponse: Decodable {
+struct GitResponse: Decodable, Equatable {
     let url, forksUrl, commitsUrl: String?
     let id, nodeId: String?
     let gitPullUrl, gitPushUrl: String?
@@ -37,7 +37,7 @@ struct HelloWorldRb: Decodable {
 }
 
 // MARK: - Owner
-struct Owner: Decodable {
+struct Owner: Decodable, Equatable {
     let login: String
     let id: Int
     let nodeId: String?
@@ -52,4 +52,4 @@ struct Owner: Decodable {
     let siteAdmin: Bool?
 }
 
-struct FileResponse: Decodable { }
+struct FileResponse: Decodable, Equatable { }

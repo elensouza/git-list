@@ -19,6 +19,7 @@ final class SplashScreenViewController: UIViewController {
         let imageView = UIImageView(image: Images.githubLogo)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = Colors.primary
 
         return imageView
     }()

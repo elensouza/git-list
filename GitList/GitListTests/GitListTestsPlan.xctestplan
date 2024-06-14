@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "2B284DF2-C45C-4DEF-A98A-EC6C664D3B9C",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:GitList.xcodeproj",
+        "identifier" : "03131A762C1662D7008562C5",
+        "name" : "GitListTests"
+      }
+    }
+  ],
+  "version" : 1
+}

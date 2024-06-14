@@ -39,7 +39,6 @@ final class GitTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
         addsConstraints()
-        backgroundColor = .clear
     }
 
     required init?(coder: NSCoder) {

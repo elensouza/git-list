@@ -192,7 +192,6 @@ extension GitListViewController: UITableViewDelegate {
     }
 }
 
-
 extension GitListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.gits.count

@@ -10,7 +10,6 @@ import Foundation
 protocol GitListPresenterProtocol: AnyObject {
     var controller: GitListViewControllerProtocol? { get set }
     var gits: [GitCellViewModel] { get }
-    var pages: Int { get }
     var currentPage: Int { get }
     var isRequesting: Bool { get }
 
@@ -27,7 +26,6 @@ final class GitListPresenter: GitListPresenterProtocol {
     private let service: GitListServiceProtocol
 
     weak var controller: GitListViewControllerProtocol?
-    var pages = 0
     var currentPage = 0
     var gits: [GitCellViewModel] = []
     var isRequesting: Bool = false
@@ -64,7 +62,6 @@ final class GitListPresenter: GitListPresenterProtocol {
     }
 
     private func resetData() {
-        pages = 0
         currentPage = 0
         gits = []
     }
