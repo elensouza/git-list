@@ -47,26 +47,26 @@ final class Network {
                     expecting: T.Type = T.self,
                     completion: @escaping (Result<T, Error>) -> Void) where T: Decodable {
         guard let scheme: String = try? Configuration.value(for: .scheme),
-              let host: String = try? Configuration.value(for: .host),
-              let beginPath: String = try? Configuration.value(for: .beginPath) else {
+              let host: String = try? Configuration.value(for: .host) else {
             return completion(.failure(CustomError.invalidUrl))
         }
 
-        var urlComponent = URLComponents()
-        urlComponent.scheme = scheme
-        urlComponent.host = host
-        urlComponent.path = beginPath + path
-        urlComponent.queryItems = params.map { param in
+        var urlComponents = URLComponents()
+        urlComponents.scheme = scheme
+        urlComponents.host = host
+        urlComponents.path = path
+        urlComponents.queryItems = params.map { param in
             URLQueryItem(name: param.key, value: param.value)
         }
 
-        guard let url = urlComponent.url else {
+        guard let url = urlComponents.url else {
             return completion(.failure(CustomError.invalidUrl))
         }
 
         let urlRequest = URLRequest(url: url)
         urlSession.task(with: urlRequest) { [weak self] data, _, error  in
             if let error = error {
+                print(error)
                 self?.handleError(error, completion: completion)
                 return
             }

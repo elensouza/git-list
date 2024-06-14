@@ -19,6 +19,7 @@ final class SplashScreenViewController: UIViewController {
         let imageView = UIImageView(image: Images.githubLogo)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = Colors.primary
 
         return imageView
     }()
@@ -69,6 +70,11 @@ private extension SplashScreenViewController {
     }
 
     func openListController() {
-        //TODO
+        let presenter = GitListPresenter()
+        let controller = GitListViewController(presenter: presenter)
+
+        presenter.controller = controller
+
+        self.navigationController?.setViewControllers([controller], animated: false)
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 enum Size {
     /// 48.0
-    static let defaultHeight: CGFloat = 48.0
+    static let defaultHeight: CGFloat = 55.0
 
     /// 100.0
     static let largeIcon: CGFloat = 100.0

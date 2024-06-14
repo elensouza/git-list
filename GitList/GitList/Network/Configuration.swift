@@ -15,7 +15,6 @@ enum Configuration {
     enum Key: String {
         case host = "HOST"
         case scheme = "SCHEME"
-        case beginPath = "BEGIN_PATH"
     }
 
     static func value<T>(for key: Key) throws -> T where T: LosslessStringConvertible {

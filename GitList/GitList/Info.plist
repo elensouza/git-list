@@ -2,11 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SCHEME</key>
-	<string>$(SCHEME)</string>
 	<key>HOST</key>
 	<string>$(HOST)</string>
-	<key>BEGIN_PATH</key>
-	<string>$(BEGIN_PATH)</string>
+	<key>SCHEME</key>
+	<string>$(SCHEME)</string>
 </dict>
 </plist>
