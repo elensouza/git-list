@@ -7,8 +7,10 @@ Para rodar os testes: cmd+u (iPhone 14 Pro - iOS 16.4)
 
 A versão utilizada do Xcode foi a 14.3.
 
+![Preview](https://github.com/elensouza/git-list/assets/47696869/d9731e5b-2d10-414f-8061-408f10e6109d)
+
 ## Frameworks adicionados:
-Snapshot - para os testes de snapshots.
+[Swift Snapshot Testing](https://github.com/pointfreeco/swift-snapshot-testing) - para os testes de snapshot.
 
 ## Adicionais:
 * Suporte a dark e light mode.
@@ -18,13 +20,11 @@ Snapshot - para os testes de snapshots.
 * Os testes de snapshots contemplam iPhone, portrait, landscape, light e dark mode.
 * Strings localizadas para português e inglês.
 
-![Simulator Screen Recording - iPhone 14 Pro - 2024-06-14 at 01 37 54](https://github.com/elensouza/git-list/assets/47696869/d9731e5b-2d10-414f-8061-408f10e6109d)
-
-
 ## Sugestões de melhorias:
 - [ ] Adicionar validação para paginação.
 - [ ] Adicionar um framework , tipo Tuist, para gerar os arquivos do Xcode e assim facilitar a manutenção, além de evitar conflitos no pbxproj quando houver atuação em equipes.
 - [ ] Criar um modulo com helpers para facilitar os testes, por exemplo:  pegar views pelo accessibilityIdentifier, mock de navigation, URLSession, configuração de UINavigation.
+- [ ] Criar um módulo para Networks para centralizar e deixar disponível para outras equipes.
 - [ ] Criar testes automatizados de UI.
 - [ ] Mapear os tipo de erro para apresentar adequadamente ao usuário.
 - [ ] Adicionar acessibilidade para VoiceOver, fontes dinâmicas e outros tipos de acessibilidade para democratizar o acesso ao aplicativo.
