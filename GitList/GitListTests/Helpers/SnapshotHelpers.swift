@@ -44,13 +44,13 @@ extension XCTestCase {
             let name = "\(testName)\(mode)-"
             snapshot(matching: viewController,
                      as: .image(on: .iPhone13Pro(.portrait)),
-                     testName: "\(name)-portrait-iPhone13Pro",
+                     testName: "\(name)-portrait-iPhone14Pro",
                      file: file,
                      line: line,
                      record: recording)
             snapshot(matching: viewController,
                      as: .image(on: .iPhone13Pro(.landscape)),
-                     testName: "\(name)-landscape-iPhone13Pro",
+                     testName: "\(name)-landscape-iPhone14Pro",
                      file: file,
                      line: line,
                      record: recording)

@@ -1,16 +1,14 @@
 # Git-list
 Aplicativo que lista os gist da API pública do GitHub, ao clicar em um item da lista mostra detalhes. Listagem com paginação, ao chegar no ultimo item, faz request para a próxima página (infinite scroll).
 
-A arquitetura utilizada foi a MVP, pois se adequa bem à necessidade do projeto, dada sua baixa complexidade. A MVVM poderia ser usada também, minha decisão foi baseada considerando o prazo de entrega x esforço. As camadas separadas,  aliada à  Programação Orientada a Protocolos, facilitam a manutenção, adição de novas features assim como a criação de testes unitários e seus stubs, skpies e mocks. Além de facilitar a divisão das responsabilidades e manter a organização.
+A arquitetura utilizada foi a MVP, pois se adequa bem à necessidade do projeto, dada sua baixa complexidade. A MVVM poderia ser usada também, minha decisão foi baseada considerando o prazo de entrega x esforço. As camadas separadas,  aliada à  Programação Orientada a Protocolos, facilitam a manutenção, adição de novas features assim como a criação de testes unitários e seus stubs, spies e mocks. Além de facilitar a divisão das responsabilidades e manter a organização.
 
 Para rodar os testes: cmd+u
 
 A versão utilizada do Xcode foi a 14.3.
 
 ## Frameworks adicionados:
-SwiftLint - visando qualidade e integridade do código.
-
-Snapshot - para os testes de snapshots.
+Snapshot - para os testes de snapshots (iPhone 14 Pro - iOS 16.4).
 
 ## Adicionais:
 Suporte a dark e light mode.
@@ -31,3 +29,4 @@ Criei strings localizadas para português e inglês.
 - [ ] Mapear os tipo de erro para apresentar adequadamente ao usuário.
 - [ ] Adicionar acessibilidade para VoiceOver, fontes dinâmicas e outros tipos de acessibilidade para democratizar o acesso ao aplicativo.
 - [ ] Pipeline ci/cd.
+- [ ] Adicionar Swiftlint visando qualidade e integridade do código.
